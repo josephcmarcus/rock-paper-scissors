@@ -7,4 +7,10 @@ let computerPlay = () => {
     } else if (choice === 3) {
         return 'scissors';
     } 
-}
+};
+
+let playerPlay = () => {
+    let choice = prompt('Rock, Paper, or Scissors?');
+    choice = choice.toLowerCase();
+    return choice;
+};
