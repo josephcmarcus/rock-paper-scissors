@@ -6,22 +6,23 @@
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <h2>Rock, Paper, Scissors</h2>
-    <p>Choose Rock, Paper, or Scissors below. Best out of five wins the round.</p>
+    <h2 id="game-headline">Rock, Paper, Scissors</h2>
+    <p id="game-instructions">Choose Rock, Paper, or Scissors below. First to win five rounds wins the game.</p>
     <div id="choice-container">
         <button class="choice-btn" id="rock">Rock</button>
         <button class="choice-btn" id="paper">Paper</button>
         <button class="choice-btn" id="scissors">Scissors</button>
+        <p id="round-results">&nbsp;</p>
     </div>
     <div class="current-game-scoreboard">
         <h3>Current Game Score:</h3>
-        <span>Player Score: </span><span id="player-score"> </span> | 
-        <span>Computer Score: </span><span id="computer-score"> </span>
+        <span>Player Score: </span><span id="player-score"></span> | 
+        <span>Computer Score: </span><span id="computer-score"></span>
     </div>
     <div class="total-game-wins">
         <h3>Total Game Wins:</h3>
-        <span>Player: </span><span id="player-wins"> </span> | 
-        <span>Computer: </span><span id="computer-wins"> </span>
+        <span>Player: </span><span id="player-wins"></span> | 
+        <span>Computer: </span><span id="computer-wins"></span>
     </div>
     <script src="./app.js"></script>
 </body>

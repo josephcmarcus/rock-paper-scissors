@@ -3,6 +3,9 @@ const playerScoreSpan = document.getElementById('player-score');
 const computerScoreSpan = document.getElementById('computer-score');
 const playerWinsSpan = document.getElementById('player-wins');
 const computerWinsSpan = document.getElementById('computer-wins');
+const gameHeadline = document.getElementById('game-headline');
+const gameInstructions = document.getElementById('game-instructions');
+const roundResults = document.getElementById('round-results');
 
 let roundResult = '';
 let playerScore = 0;
@@ -37,25 +40,25 @@ let playerPlay = (e) => {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log(`Tie! You both chose ${playerSelection}.`);
+        roundResults.innerText = `Tie! You both chose ${playerSelection}.`;
         return 'tie';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        console.log(`You chose ${playerSelection} which beats ${computerSelection}. You win this round!`);
+        roundResults.innerText = `You chose ${playerSelection} which beats ${computerSelection}.`;
         playerScore++;
         playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        console.log(`You chose ${playerSelection} which beats ${computerSelection}. You win this round!`);
+        roundResults.innerText = `You chose ${playerSelection} which beats ${computerSelection}.`;
         playerScore++;
         playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        console.log(`You chose ${playerSelection} which beats ${computerSelection}. You win this round!`);
+        roundResults.innerText = `You chose ${playerSelection} which beats ${computerSelection}.`;
         playerScore++;
         playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else {
-        console.log(`You chose ${playerSelection} which loses to ${computerSelection}. You lose this round.`);
+        roundResults.innerText = `You chose ${playerSelection} which loses to ${computerSelection}.`;
         computerScore++;
         computerScoreSpan.innerText = computerScore;
         return 'computer win';
@@ -73,6 +76,7 @@ function scoreCheck(playerScore, computerScore) {
     if (playerScore === 5) {
         playerWins++
         playerWinsSpan.innerText = playerWins;
+        roundResults.innerHTML += `<br />Game over. To start a new game, choose Rock, Paper, or Scissors.`
         gameOver();
     } else if (computerScore === 5) {
         computerWins++
