@@ -1,3 +1,5 @@
+const choiceButtons = document.querySelectorAll('button');
+
 let computerPlay = () => {
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     if (randomNumber === 1) {
@@ -12,15 +14,11 @@ let computerPlay = () => {
     } 
 };
 
-const choiceButtons = document.querySelectorAll('button');
-
 let playerPlay = (e) => {
     let playerSelection = e.target.id
     playerSelection = playerSelection.toLowerCase();
     return playerSelection;
 };
-
-choiceButtons.forEach(addEventListener('click', playerPlay));
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -40,6 +38,10 @@ function playRound(playerSelection, computerSelection) {
         return 'computer win';
     }; 
 };
+
+choiceButtons.forEach(addEventListener('click', function(e) {
+    playRound(playerPlay(e), computerPlay());
+}));
 
 function game() {
     let playerScore = 0;
