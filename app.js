@@ -36,35 +36,24 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         console.log(`You chose ${playerSelection} which beats ${computerSelection}. You win this round!`);
         playerScore++;
+        playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         console.log(`You chose ${playerSelection} which beats ${computerSelection}. You win this round!`);
         playerScore++;
+        playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         console.log(`You chose ${playerSelection} which beats ${computerSelection}. You win this round!`);
         playerScore++;
+        playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else {
         console.log(`You chose ${playerSelection} which loses to ${computerSelection}. You lose this round.`);
         computerScore++;
+        computerScoreSpan.innerText = computerScore;
         return 'computer win';
     }; 
-};
-
-function game(roundResult) {
-    for (let i = 0; i < 5; i++) {
-        
-    } if (playerScore > computerScore) {
-        console.log(`Hooray! You win. Final score was Player: ${playerScore} Computer: ${computerScore}.`);
-        return 'player wins the game'
-    } else if (playerScore < computerScore) {
-        console.log(`Boo... you lost. Final score was Player: ${playerScore} Computer: ${computerScore}.`);
-        return 'computer wins the game'
-    } else {
-        console.log(`Looks like a tie! Final score was Player: ${playerScore} Computer: ${computerScore}.`)
-        return 'tie game'
-    };
 };
 
 choiceContainer.addEventListener('click', function(e) {
