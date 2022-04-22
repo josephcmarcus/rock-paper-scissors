@@ -8,13 +8,15 @@
 <body>
     <h2>Rock, Paper, Scissors</h2>
     <p>Choose Rock, Paper, or Scissors below. Best out of five wins the round.</p>
-    <div class="choice-container">
+    <div id="choice-container">
         <button class="choice-btn" id="rock">Rock</button>
         <button class="choice-btn" id="paper">Paper</button>
         <button class="choice-btn" id="scissors">Scissors</button>
     </div>
     <div class="scoreboard">
-        <p>**SCORES GO HERE**</p>
+        <h3>Current Game Score:</h3>
+        <span>Player Score: </span><span id="player-score"> </span> | 
+        <span>Computer Score: </span><span id="computer-score"> </span>
     </div>
     <script src="./app.js"></script>
 </body>
