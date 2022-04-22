@@ -12,11 +12,15 @@ let computerPlay = () => {
     } 
 };
 
-let playerPlay = () => {
-    let playerSelection = prompt('Rock, Paper, or Scissors?');
+const choiceButtons = document.querySelectorAll('button');
+
+let playerPlay = (e) => {
+    let playerSelection = e.target.id
     playerSelection = playerSelection.toLowerCase();
     return playerSelection;
 };
+
+choiceButtons.forEach(addEventListener('click', playerPlay));
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
