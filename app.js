@@ -1,13 +1,19 @@
 const choiceContainer = document.getElementById('choice-container');
 const playerScoreSpan = document.getElementById('player-score');
 const computerScoreSpan = document.getElementById('computer-score');
+const playerWinsSpan = document.getElementById('player-wins');
+const computerWinsSpan = document.getElementById('computer-wins');
+
 let roundResult = '';
 let playerScore = 0;
 let computerScore = 0;
 let playerWins = 0;
 let computerWins = 0;
+
 playerScoreSpan.innerText = playerScore;
 computerScoreSpan.innerText = computerScore;
+playerWinsSpan.innerText = playerWins;
+computerWinsSpan.innerText = computerWins;
 
 let computerPlay = () => {
     let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -56,39 +62,29 @@ function playRound(playerSelection, computerSelection) {
     }; 
 };
 
+let gameOver = () => {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreSpan.innerText = playerScore;
+    computerScoreSpan.innerText = computerScore;
+}
+
+function scoreCheck(playerScore, computerScore) {
+    if (playerScore === 5) {
+        playerWins++
+        playerWinsSpan.innerText = playerWins;
+        gameOver();
+    } else if (computerScore === 5) {
+        computerWins++
+        computerWinsSpan.innerText = computerWins;
+        gameOver();
+    }
+};
+
 choiceContainer.addEventListener('click', function(e) {
     if (e.target.classList != 'choice-btn' ) {
-        return ;
+        return;
     }
-    roundResult = playRound(playerPlay(e), computerPlay());
-    console.log(`***${roundResult}***`);
+    playRound(playerPlay(e), computerPlay());
+    scoreCheck(playerScore, computerScore);
 });
-
-
-
-
-// function game() {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     for (let i = 0; i < 5; i++) {
-//         let roundResult = playRound(playerPlay(), computerPlay());
-//         if (roundResult === 'tie') {
-//             console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
-//         } else if (roundResult === 'player win') {
-//             playerScore++;
-//             console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
-//         } else if (roundResult === 'computer win') {
-//             computerScore++;
-//             console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
-//         }
-//     } if (playerScore > computerScore) {
-//         console.log(`Hooray! You win. Final score was Player: ${playerScore} Computer: ${computerScore}.`);
-//         return 'player wins the game'
-//     } else if (playerScore < computerScore) {
-//         console.log(`Boo... you lost. Final score was Player: ${playerScore} Computer: ${computerScore}.`);
-//         return 'computer wins the game'
-//     } else {
-//         console.log(`Looks like a tie! Final score was Player: ${playerScore} Computer: ${computerScore}.`)
-//         return 'tie game'
-//     };
-// };
