@@ -1,3 +1,3 @@
 # Rock, Paper, Scissors
 
-A simple game of Rock, Paper, Scissors played in the console by invoking the game() function. The user is asked to enter rock, paper, or scissors into the prompt modal. The computer's choice is calculated by generating a random number between 1-3 with rock, paper, and scissors each assigned to a specific number. The player's choice is then compared to the computer's choice to determine a winner for the round. Best out of five rounds wins the game.
+A simple game of Rock, Paper, Scissors. The user presses one of the three buttons on screen for their choice. The computer's choice is calculated by generating a random number between 1-3 with rock, paper, and scissors each assigned to a specific number. The player's choice is then compared to the computer's choice to determine a winner for the round. Best out of five rounds wins the game.
