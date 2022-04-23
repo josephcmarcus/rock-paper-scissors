@@ -58,3 +58,21 @@ h3, div, p, span {
 .choice-btn:active {
     transform: translateY(4px);
 }
+
+@media screen and (max-width: 768px) {
+    #game-headline {
+        font-size: 30px;
+    }
+    
+    #player-wins, #computer-wins, #player-score, #computer-score {
+        font-size: 20px;
+    }
+
+    #choice-container {
+        margin-top: 2vh;
+        height: 22vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
