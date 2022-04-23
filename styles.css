@@ -1,3 +1,11 @@
+html {
+    min-height: 100%;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .intro-container, .scoreboard-container {
     display: flex;
     flex-direction: column;
@@ -15,4 +23,38 @@
 
 h3, div, p, span {
     text-align: center;
+    color: white;
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+#game-headline {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 48px;
+}
+
+#player-wins, #computer-wins, #player-score, #computer-score {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 32px;
+}
+
+.choice-btn {
+    font-family: 'Source Code Pro', sans-serif;
+    padding: 10px 50px;
+    text-decoration: none;
+    border: 0.1em solid #ff00d0; 
+    background-color: transparent;
+    color: white;
+    -webkit-box-shadow: 0px 5px 7px -1px #ff00d0; 
+    box-shadow: 0px 5px 7px -1px #ff00d0;
+    transition: 0.3s;
+}
+
+.choice-btn:hover {
+    padding: 10px 50px;
+    -webkit-box-shadow: 0px 5px 7px -1px #ff00d09a; 
+    box-shadow: 0px 5px 7px -1px #ff00d09a;
+}
+
+.choice-btn:active {
+    transform: translateY(4px);
 }

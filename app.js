@@ -40,25 +40,25 @@ let playerPlay = (e) => {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        roundResults.innerText = `Tie! You both chose ${playerSelection}.`;
+        roundResults.innerText = `TIE! You both chose ${playerSelection}.`;
         return 'tie';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        roundResults.innerText = `You chose ${playerSelection} which beats ${computerSelection}.`;
+        roundResults.innerText = `YOU chose ${playerSelection} which beats COMPUTER'S ${computerSelection}.`;
         playerScore++;
         playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        roundResults.innerText = `You chose ${playerSelection} which beats ${computerSelection}.`;
+        roundResults.innerText = `YOU chose ${playerSelection} which beats COMPUTER'S ${computerSelection}.`;
         playerScore++;
         playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        roundResults.innerText = `You chose ${playerSelection} which beats ${computerSelection}.`;
+        roundResults.innerText = `YOU chose ${playerSelection} which beats COMPUTER'S ${computerSelection}.`;
         playerScore++;
         playerScoreSpan.innerText = playerScore;
         return 'player win'; 
     } else {
-        roundResults.innerText = `You chose ${playerSelection} which loses to ${computerSelection}.`;
+        roundResults.innerText = `YOU chose ${playerSelection} which loses to COMPUTER'S ${computerSelection}.`;
         computerScore++;
         computerScoreSpan.innerText = computerScore;
         return 'computer win';
@@ -76,11 +76,12 @@ function scoreCheck(playerScore, computerScore) {
     if (playerScore === 5) {
         playerWins++
         playerWinsSpan.innerText = playerWins;
-        roundResults.innerHTML += `<br />Game over. To start a new game, choose Rock, Paper, or Scissors.`
+        roundResults.innerHTML += `<br /><b>YOU WIN!!! To start a new game, choose Rock, Paper, or Scissors.</b>`
         gameOver();
     } else if (computerScore === 5) {
         computerWins++
         computerWinsSpan.innerText = computerWins;
+        roundResults.innerHTML += `<br /><b>COMPUTER WINS!!! To start a new game, choose Rock, Paper, or Scissors.</b>`
         gameOver();
     }
 };
